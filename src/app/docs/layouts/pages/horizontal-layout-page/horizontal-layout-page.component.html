@@ -1,0 +1,26 @@
+<div>
+  <label for="policy-select">HORI-POLICY</label>
+  <select id="policy-select" name="policy" (change)="onValueChange($event)">
+    <option value="top-left" >TOP-LEFT</option>
+    <option value="top-center">TOP-CENTER</option>
+    <option value="top-right">TOP-RIGTH</option>
+    <option value="center-left">CENTER-LEFT</option>
+    <option value="center-center">CENTER-CENTER</option>
+    <option value="center-right">CENTER-RIGHT</option>
+    <option value="bottom-left">BOTTOM-LEFT</option>
+    <option value="bottom-center">BOTTOM-CENTER</option>
+    <option value="bottom-right">BOTTOM-RIGTH</option>
+  </select>
+</div>
+
+<bee-horizontal-layout
+  [userClass]="'bee-horizontal-layout-page'"
+  [gap]="10"
+  [policyPos]="selectedValue()"
+>
+  <div class="bee-div-a">
+    <bee-center-layout [fit2Content]="true">A</bee-center-layout>
+  </div>
+  <div class="bee-div-b">B</div>
+  <div class="bee-div-c">C</div>
+</bee-horizontal-layout>

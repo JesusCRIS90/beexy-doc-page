@@ -1,0 +1,26 @@
+<div>
+  <label for="policy-select">POLICY</label>
+  <select id="policy-select" name="policy" (change)="onValueChange($event)">
+    <option value="left-left">LEFT-LEFT</option>
+    <option value="left-center">LEFT-CENTER</option>
+    <option value="left-right">LEFT-RIGTH</option>
+    <option value="center-left">CENTER-LEFT</option>
+    <option value="center-center">CENTER-CENTER</option>
+    <option value="center-right">CENTER-RIGHT</option>
+    <option value="right-left">RIGTH-LEFT</option>
+    <option value="right-center">RIGTH-CENTER</option>
+    <option value="right-right">RIGTH-RIGTH</option>
+  </select>
+</div>
+
+<bee-vertical-layout 
+    [userClass]="'bee-vertical-layout-page'" 
+    [gap]="10"
+    [policyPos]="selectedValue()"
+    >
+  <div class="bee-div-a">
+    <bee-center-layout [fit2Content]="true">A</bee-center-layout>
+  </div>
+  <div class="bee-div-b">B</div>
+  <div class="bee-div-c">C</div>
+</bee-vertical-layout>

@@ -1,0 +1,13 @@
+<div>
+  <label for="boolean-select">Fit to Content</label>
+  <select id="boolean-select" name="boolean" (change)="onValueChange($event)">
+    <option value="true">True</option>
+    <option value="false">False</option>
+  </select>
+</div>
+
+<bee-center-layout 
+    [fit2Content]="selectedValue()" 
+    [userClass]="'bee-center-layout-page'">
+  <p>center-layout-page works!</p>
+</bee-center-layout>

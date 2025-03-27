@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.parent-float-layout {
+  width: 500px;
+  height: 300px;
+  margin-bottom: 30px;
+  background-color: rgb(185, 132, 16);
+}
+
+.float-component {
+  background-color: rgb(128, 128, 204);
+  width: 25px;
+  height: 25px;
+
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

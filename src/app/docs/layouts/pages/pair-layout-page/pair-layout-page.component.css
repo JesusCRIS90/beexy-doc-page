@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.pair-layout {
+  background-color: rgb(184, 132, 22);
+}
+
+.right-side {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(16, 185, 58);
+}
+
+.left-side {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(16, 123, 185);
+}

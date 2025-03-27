@@ -1,0 +1,60 @@
+<bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER" [gap]="50">
+  <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+    <span>Orientation </span>
+    <bee-combo-box
+      [boxOptions]="orientationCBOptions()"
+      [id]="'float-layout-page-orientation'"
+      (valueUpdated)="updateOrientation($event)"
+    />
+  </bee-horizontal-layout>
+
+  <bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER">
+    <span>X-POS</span>
+    <bee-numerical-slider
+      [min]="0"
+      [max]="100"
+      (valueUpdated)="updateXpos($event)"
+    />
+  </bee-horizontal-layout>
+
+  <bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER">
+    <span>Y-POS</span>
+    <bee-numerical-slider
+      [min]="0"
+      [max]="100"
+      (valueUpdated)="updateYpos($event)"
+    />
+  </bee-horizontal-layout>
+
+  <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+    <span>Anchor Point</span>
+    <bee-combo-box
+      [boxOptions]="anchorPointCBOptions()"
+      [id]="'float-layout-page-anchorPoint'"
+      (valueUpdated)="updateAnchorPoint($event)"
+    />
+  </bee-horizontal-layout>
+</bee-horizontal-layout>
+
+<bee-relative-layout class="parent-float-layout">
+  <bee-floating-layout
+    [posX]="position().xpos"
+    [posY]="position().ypos"
+    [anchorPoint]="anchorPoint()"
+    [orientation]="orientation()"
+  >
+    <div class="float-component">A</div>
+  </bee-floating-layout>
+</bee-relative-layout>
+
+<bee-relative-layout class="parent-float-layout">
+  <bee-floating-layout
+    [posX]="position().xpos"
+    [posY]="position().ypos"
+    [anchorPoint]="anchorPoint()"
+    [orientation]="orientation()"
+  >
+    <div class="float-component">A</div>
+    <div class="float-component">A</div>
+  </bee-floating-layout>
+</bee-relative-layout>

@@ -1,0 +1,9 @@
+
+
+<bee-fixed-width-layout class="bee-bg" [width]="fixedWidthSliderValue()">
+
+    <bee-numerical-slider [id]="'fixed-width-page-slider'" 
+        [min]="500" [max]="1200" (valueUpdated)="updateFixWidth($event)"/>
+    <div class="bee-div-c">C</div>
+
+</bee-fixed-width-layout>
