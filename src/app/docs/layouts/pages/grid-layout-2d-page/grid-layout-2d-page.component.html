@@ -1,1 +1,94 @@
-<p>grid-layout-2d-page works!</p>,
+<bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER" [gap]="50">
+  <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+    <span>Policy</span>
+    <bee-combo-box
+      [boxOptions]="policyCBOptions()"
+      [id]="'grid-1d-layout-page-policy'"
+      (valueUpdated)="updatePolicy($event)"
+    />
+  </bee-horizontal-layout>
+</bee-horizontal-layout>
+
+<bee-grid-2d-layout
+  [inputGrid2Distribution]="{ x: '1fr 1fr 1fr', y: '2fr 1fr 2fr' }"
+  [gap]="10"
+  [policyPos]="policy()"
+>
+  <div class="float-component-a"></div>
+  <div class="float-component-b"></div>
+  <div class="float-component-c"></div>
+
+  <div class="float-component-b"></div>
+  <div class="float-component-c"></div>
+  <div class="float-component-a"></div>
+
+  <div class="float-component-c"></div>
+  <div class="float-component-a"></div>
+  <div class="float-component-b"></div>
+</bee-grid-2d-layout>
+
+<h1>Using ItemGrid Component</h1>
+
+<bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER" [gap]="50">
+    
+    <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+      <span>GRID POLICY</span>
+      <bee-combo-box
+        [boxOptions]="policyCBOptions()"
+        [id]="'grid-2d-layout-page-policy-second'"
+        (valueUpdated)="updatePolicySecond($event)"
+      />
+    </bee-horizontal-layout>
+
+    <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+        <span>Individual Item Policy</span>
+        <bee-combo-box
+          [boxOptions]="policyCBOptions()"
+          [id]="'grid-2d-layout-page-policy-second-ig'"
+          (valueUpdated)="updatePolicyIndividualItem($event)"
+        />
+      </bee-horizontal-layout>
+
+  </bee-horizontal-layout>
+
+<bee-grid-2d-layout
+  [inputGrid2Distribution]="{
+    x: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr',
+    y: '1fr 1fr 1fr'
+  }"
+  [gap]="5"
+  [policyPos]="policy_second()"
+>
+  <bee-item-grid-layout
+    [x_dir]="{ start: 1, span: 6 }"
+    [y_dir]="{ start: 1, span: 2 }"
+    [policyPos]="policy_itemGrid()"
+  >
+    <div class="float-component-a">A</div>
+  </bee-item-grid-layout>
+  <div class="float-component-b"></div>
+
+  <bee-item-grid-layout
+    [x_dir]="{ start: 8, span: 4 }"
+    [y_dir]="{ start: 2, span: 2 }"
+  >
+    <div class="float-component-c"></div>
+  </bee-item-grid-layout>
+
+  <bee-item-grid-layout
+    [x_dir]="{ start: 8, span: 5 }"
+    [y_dir]="{ start: 1, span: 0 }"
+  >
+    <div class="float-component-a"></div>
+  </bee-item-grid-layout>
+
+  <div class="float-component-c"></div>
+
+  <bee-item-grid-layout
+    [x_dir]="{ start: 1, span: 7 }"
+    [y_dir]="{ start: 3, span: 0 }"
+  >
+    <div class="float-component-d"></div>
+  </bee-item-grid-layout>
+
+</bee-grid-2d-layout>

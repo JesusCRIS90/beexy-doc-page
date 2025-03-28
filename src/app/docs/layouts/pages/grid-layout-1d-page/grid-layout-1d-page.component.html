@@ -1,1 +1,30 @@
-<p>grid-layout-1d-page works!</p>,
+<bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER" [gap]="50">
+  <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+    <span>Orientation </span>
+    <bee-combo-box
+      [boxOptions]="orientationCBOptions()"
+      [id]="'grid-1d-layout-page-orientation'"
+      (valueUpdated)="updateOrientation($event)"
+    />
+  </bee-horizontal-layout>
+
+  <bee-horizontal-layout [policyPos]="POLICY.CENTER_CENTER">
+    <span>Policy</span>
+    <bee-combo-box
+      [boxOptions]="policyCBOptions()"
+      [id]="'grid-1d-layout-page-policy'"
+      (valueUpdated)="updatePolicy($event)"
+    />
+  </bee-horizontal-layout>
+</bee-horizontal-layout>
+
+<bee-grid-1d-layout
+  [inputGridDistribution]="'1fr 1fr 1fr'"
+  [gap]="10"
+  [policyPos]="policy()"
+  [orientation]="orientation()"
+>
+  <div class="float-component-a">A</div>
+  <div class="float-component-b">B</div>
+  <div class="float-component-c">C</div>
+</bee-grid-1d-layout>

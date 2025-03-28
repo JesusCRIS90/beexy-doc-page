@@ -1,3 +1,27 @@
 :host {
   display: block;
 }
+
+.float-component-a {
+  background-color: rgb(128, 128, 204);
+  width: 200px;
+  height: 100px;
+}
+
+.float-component-b {
+  background-color: rgb(128, 204, 172);
+  width: 200px;
+  height: 150px;
+}
+
+.float-component-c {
+  background-color: rgb(204, 184, 128);
+  width: 200px;
+  height: 50px;
+}
+
+.float-component-d {
+  background-color: rgb(204, 146, 128);
+  width: 400px;
+  height: 50px;
+}
