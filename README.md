@@ -4,6 +4,6 @@ The following project will be the documentation page to explain how to use the l
 
 * @beexy/ngx-layouts
 
-For now, the webpage is under development. Once time, I first-version is ready will be published.
+For now, the webpage is under development. Once time a first-version is ready will be published.
 
 Thanks
