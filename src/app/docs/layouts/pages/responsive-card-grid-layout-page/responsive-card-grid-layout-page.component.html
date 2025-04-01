@@ -1,1 +1,36 @@
-<p>responsive-card-grid-layout-page works!</p>,
+<bee-horizontal-layout>
+  <bee-horizontal-layout [policyPos]="POLICY.TOP_CENTER">
+    <span>Inner Window Size</span>
+    <bee-numerical-slider
+      [min]="300"
+      [max]="1800"
+      (valueUpdated)="updateInnerWindowSize($event)"
+    />
+  </bee-horizontal-layout>
+
+  <bee-horizontal-layout>
+    <span>Amount of Cards</span>
+    <bee-numerical-slider
+      [min]="1"
+      [max]="30"
+      (valueUpdated)="updateCardAmount($event)"
+    />
+  </bee-horizontal-layout>
+</bee-horizontal-layout>
+
+<h1>Responsive Card Grid</h1>
+
+<bee-fixed-width-layout [width]="innerWindowSize()">
+  <bee-responsive-card-grid-layout [gap]="10">
+    @for (cardNumber of cardsNumberArray(); track $index) {
+    <bee-card-layout
+      [minMaxWidth]="{ min: 250, max: 250 }"
+      [userClass]="'card-container'"
+    >
+      <bee-horizontal-layout>
+        <p>I am a Bee Card !!</p>
+      </bee-horizontal-layout>
+    </bee-card-layout>
+    }
+  </bee-responsive-card-grid-layout>
+</bee-fixed-width-layout>
