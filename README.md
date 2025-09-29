@@ -6,4 +6,4 @@ The following project will be the documentation page to explain how to use the l
 
 For now, the webpage is under development. Once time a first-version is ready will be published.
 
-Thanks
+Thanks!
